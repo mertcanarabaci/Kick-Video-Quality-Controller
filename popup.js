@@ -1,5 +1,5 @@
 // Ayarları yükle
-chrome.storage.sync.get(['enabled', 'quality'], function(data) {
+chrome.storage.local.get(['enabled', 'quality'], function(data) {
   const enabled = data.enabled !== undefined ? data.enabled : true;
   const quality = data.quality || '1080';
   
@@ -12,7 +12,7 @@ chrome.storage.sync.get(['enabled', 'quality'], function(data) {
 // Toggle değişikliğini dinle
 document.getElementById('enableToggle').addEventListener('change', function(e) {
   const enabled = e.target.checked;
-  chrome.storage.sync.set({ enabled: enabled });
+  chrome.storage.local.set({ enabled: enabled });
   
   const quality = document.getElementById('qualitySelect').value;
   updateStatus(enabled, quality);
@@ -21,7 +21,7 @@ document.getElementById('enableToggle').addEventListener('change', function(e) {
 // Kalite seçimi değişikliğini dinle
 document.getElementById('qualitySelect').addEventListener('change', function(e) {
   const quality = e.target.value;
-  chrome.storage.sync.set({ quality: quality });
+  chrome.storage.local.set({ quality: quality });
   
   const enabled = document.getElementById('enableToggle').checked;
   updateStatus(enabled, quality);
