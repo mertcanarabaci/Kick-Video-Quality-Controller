@@ -1,8 +1,8 @@
 // Set default settings on first install
 chrome.runtime.onInstalled.addListener(() => {
-  chrome.storage.sync.get(['enabled', 'quality'], (data) => {
+  chrome.storage.local.get(['enabled', 'quality'], (data) => {
     if (data.enabled === undefined) {
-      chrome.storage.sync.set({ 
+      chrome.storage.local.set({ 
         enabled: true,
         quality: '1080'
       });
