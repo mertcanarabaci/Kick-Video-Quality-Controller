@@ -2,7 +2,7 @@
     'use strict';
     
     // Check settings and apply
-    chrome.storage.sync.get(['enabled', 'quality'], function(data) {
+    chrome.storage.local.get(['enabled', 'quality'], function(data) {
         const enabled = data.enabled !== undefined ? data.enabled : true;
         const quality = data.quality || '1080';
         
