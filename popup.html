@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TRWR5DD9W0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-TRWR5DD9W0');
+  </script>
   <meta charset="UTF-8">
   <style>
     * {
@@ -8,7 +18,7 @@
       padding: 0;
       box-sizing: border-box;
     }
-    
+
     body {
       width: 320px;
       padding: 20px;
@@ -16,7 +26,7 @@
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
     }
-    
+
     h1 {
       font-size: 18px;
       margin-bottom: 16px;
@@ -24,7 +34,7 @@
       align-items: center;
       gap: 8px;
     }
-    
+
     .status {
       background: rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(10px);
@@ -33,15 +43,15 @@
       margin-bottom: 16px;
       font-size: 13px;
     }
-    
+
     .status.active {
       background: rgba(76, 175, 80, 0.3);
     }
-    
+
     .status.inactive {
       background: rgba(244, 67, 54, 0.3);
     }
-    
+
     .control-group {
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(10px);
@@ -49,14 +59,14 @@
       border-radius: 12px;
       margin-bottom: 12px;
     }
-    
+
     label {
       display: block;
       margin-bottom: 8px;
       font-size: 13px;
       font-weight: 500;
     }
-    
+
     select {
       width: 100%;
       padding: 10px;
@@ -68,30 +78,30 @@
       cursor: pointer;
       outline: none;
     }
-    
+
     select:hover {
       background: #f5f5f5;
     }
-    
+
     .toggle-container {
       display: flex;
       align-items: center;
       justify-content: space-between;
       margin-bottom: 12px;
     }
-    
+
     .toggle {
       position: relative;
       width: 50px;
       height: 26px;
     }
-    
+
     .toggle input {
       opacity: 0;
       width: 0;
       height: 0;
     }
-    
+
     .slider {
       position: absolute;
       cursor: pointer;
@@ -103,7 +113,7 @@
       transition: .3s;
       border-radius: 26px;
     }
-    
+
     .slider:before {
       position: absolute;
       content: "";
@@ -115,15 +125,15 @@
       transition: .3s;
       border-radius: 50%;
     }
-    
-    input:checked + .slider {
+
+    input:checked+.slider {
       background-color: #4CAF50;
     }
-    
-    input:checked + .slider:before {
+
+    input:checked+.slider:before {
       transform: translateX(24px);
     }
-    
+
     button {
       width: 100%;
       padding: 12px;
@@ -136,16 +146,16 @@
       cursor: pointer;
       transition: all 0.3s;
     }
-    
+
     button:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
-    
+
     button:active {
       transform: translateY(0);
     }
-    
+
     .footer {
       margin-top: 16px;
       text-align: center;
@@ -154,16 +164,17 @@
     }
   </style>
 </head>
+
 <body>
   <h1>
     <span>🎬</span>
     Kick Video Quality Controller
   </h1>
-  
+
   <div class="status" id="status">
     <strong>Status:</strong> <span id="statusText">Checking...</span>
   </div>
-  
+
   <div class="control-group">
     <div class="toggle-container">
       <label style="margin: 0;">Auto Quality Control</label>
@@ -173,7 +184,7 @@
       </label>
     </div>
   </div>
-  
+
   <div class="control-group">
     <label for="qualitySelect">Default Quality</label>
     <select id="qualitySelect">
@@ -185,9 +196,10 @@
       <option value="1080">1080p</option>
     </select>
   </div>
-  
+
   <button id="applyBtn">Apply and Reload Page</button>
-   
+
   <script src="popup.js"></script>
 </body>
+
 </html>
