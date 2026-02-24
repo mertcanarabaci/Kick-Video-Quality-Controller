@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Kick Video Quality Controller",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Automatic video quality control for Kick - Choose your preferred quality and keep it fixed",
   "author": "Mert Can ARABACI",
   "homepage_url": "https://github.com/mertcanarabaci/Kick-Video-Quality-Controller",
